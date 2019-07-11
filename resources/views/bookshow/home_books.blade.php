@@ -1,10 +1,46 @@
 @extends('layouts.app')
 
 @section('content')
-  @forelse ($books as $book)
-    Title: {{ $book->title }} - Price: {{ $book->price }}
-     <br>
-  @empty
-    <h2>There are no results</h2>
-  @endforelse
+  <h1 class="text-center"> <strong>All Books in Store</strong> </h1>
+  <a href="{{ route("books.create") }}" class="btn btn-warning float-right">Add New Book</a>
+  <table class="table table-dark text-center mt-5">
+    <thead>
+      <tr>
+        <th>List #</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Sale Price</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      @forelse ($books as $book)
+        <tr>
+          <th>{{ $book->id }}</th>
+          <td>{{ $book->title }}</td>
+          <td>{{ $book->author }}</td>
+          <td>£ {{ $book->price }}</td>
+          <td>
+            @if ($book->sale_price)
+              * £ {{ $book->sale_price }} *
+            @else £ {{ $book->price }}
+            @endif
+          </td>
+
+        </tr>
+      @empty
+        <tr>
+          <td colspan="4">There are no results</td>
+        </tr>
+      @endforelse
+    </tbody>
+  </table>
+
+
+
+@endsection
+
+@section('page_title')
+ Books in Store
 @endsection

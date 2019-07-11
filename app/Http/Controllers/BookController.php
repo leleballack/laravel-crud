@@ -7,17 +7,15 @@ use App\Book;
 
 class BookController extends Controller
 {
-
     public function index()
     {
-      $books = Book::where("price", ">", "5")->orderBy("price", "desc")->get();
+      $books = Book::orderBy("id", "asc")->get();
       return view("bookshow.home_books", compact("books"));
     }
 
-
     public function create()
     {
-        //
+        return view("bookshow.create_books");
     }
 
 

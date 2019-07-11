@@ -10,15 +10,15 @@ class UpdateNewbooksTable extends Migration
     public function up()
     {
         Schema::table('newbooks', function (Blueprint $table) {
-            $table->string("category");
+            $table->string("sale_price");
         });
     }
 
-    
+
     public function down()
     {
         Schema::table('newbooks', function (Blueprint $table) {
-          $table->dropColumn("category");
+          $table->dropColumn("sale_price");
         });
     }
 }
