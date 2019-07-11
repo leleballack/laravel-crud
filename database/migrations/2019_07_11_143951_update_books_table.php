@@ -14,7 +14,7 @@ class UpdateBooksTable extends Migration
     public function up()
     {
         Schema::table('books', function (Blueprint $table) {
-            $table->string("language");
+            $table->string("language")->after("author");
         });
     }
 

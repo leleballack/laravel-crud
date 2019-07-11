@@ -14,7 +14,8 @@ class UpdateBooksTable extends Migration
     public function up()
     {
         Schema::table('books', function (Blueprint $table) {
-            $table->string("language");
+            $table->string("created_at");
+            $table->string("updated_at");
         });
     }
 
@@ -26,7 +27,8 @@ class UpdateBooksTable extends Migration
     public function down()
     {
         Schema::table('books', function (Blueprint $table) {
-            $table->dropColumn("language");
+          $table->dropColumn("created_at");
+          $table->dropColumn("updated_at");
         });
     }
 }

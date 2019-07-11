@@ -9,6 +9,7 @@
         <th>List #</th>
         <th>Title</th>
         <th>Author</th>
+        <th>Language</th>
         <th>Price</th>
         <th>Sale Price</th>
       </tr>
@@ -20,6 +21,7 @@
           <th>{{ $book->id }}</th>
           <td>{{ $book->title }}</td>
           <td>{{ $book->author }}</td>
+          <td>{{ $book->language }}</td>
           <td>£ {{ $book->price }}</td>
           <td>
             @if ($book->sale_price)
@@ -27,7 +29,6 @@
             @else £ {{ $book->price }}
             @endif
           </td>
-
         </tr>
       @empty
         <tr>
@@ -36,9 +37,6 @@
       @endforelse
     </tbody>
   </table>
-
-
-
 @endsection
 
 @section('page_title')
