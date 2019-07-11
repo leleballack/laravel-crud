@@ -11105,3 +11105,7 @@ a.text-dark:focus {
   margin-bottom: 50px;
 }
 
+.container ul li {
+  list-style: none;
+}
+

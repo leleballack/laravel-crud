@@ -33,9 +33,10 @@ class BookController extends Controller
         return redirect()->route("books.index");
     }
 
-    public function show($id)
+    public function show($book_id)
     {
-        //
+        $book = Book::find($book_id);
+        return view("bookshow.show_books", compact("book"));
     }
 
 

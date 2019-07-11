@@ -12,6 +12,7 @@
         <th>Language</th>
         <th>Price</th>
         <th>Sale Price</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -22,13 +23,14 @@
           <td>{{ $book->title }}</td>
           <td>{{ $book->author }}</td>
           <td>{{ $book->language }}</td>
-          <td>£ {{ $book->price }}</td>
-          <td>
-            @if ($book->sale_price)
+          <td>{{"£ ".$book->price }}</td>
+          <td>{{ $book->sale_price ? "£ ".$book->sale_price : "£ ---" }}
+            {{-- @if ($book->sale_price)
               * £ {{ $book->sale_price }} *
-            @else £ {{ $book->price }}
-            @endif
+            @else £ ---
+            @endif --}}
           </td>
+          <td><a href="{{ route("books.show", $book->id) }}" class="btn btn-primary">Show</a> </td>
         </tr>
       @empty
         <tr>
