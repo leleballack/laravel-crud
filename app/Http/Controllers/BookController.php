@@ -21,6 +21,14 @@ class BookController extends Controller
 
     public function store(Request $request)
     {
+      $validatedData = $request->validate([
+        "title" => "bail|required|max:100",
+        "author" => "required|max:100",
+        "language" => "required|max:2",
+        "price" => "numeric|required|between:0,999.99",
+        "sale_price" => "numeric|nullable|between:0,999.99",
+      ]);
+
         $data = $request->all();
         $new_book = new Book();
         // $new_book->title = $data['title'];
