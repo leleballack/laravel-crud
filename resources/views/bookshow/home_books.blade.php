@@ -30,7 +30,11 @@
             @else £ ---
             @endif --}}
           </td>
-          <td><a href="{{ route("books.show", $book->id) }}" class="btn btn-primary">Show</a> </td>
+          <td>
+            <a href="{{ route("books.show", $book->id) }}" class="btn btn-primary">Show</a>
+            <a href="{{ route("books.edit", $book->id) }}" class="btn btn-success">Edit</a>
+            <a href="{{ route("books.destroy", $book->id) }}" class="btn btn-danger">Delete</a>
+          </td>
         </tr>
       @empty
         <tr>

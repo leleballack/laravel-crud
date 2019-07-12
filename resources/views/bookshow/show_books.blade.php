@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="container text-center">
-    <h1><strong>Book: #{{ $book->id }}</strong> </h1>
+    <h1><strong>Book: #{{ $book->id }}, "{{ $book->title }}"</strong> </h1>
     <ul>
       <li><img src="http://i.imgur.com/J5LVHEL.jpg" alt=""> </li>
       <li><strong> Title: </strong><em>{{ $book->title }}</em></li>

@@ -48,15 +48,28 @@ class BookController extends Controller
     }
 
 
-    public function edit($id)
+    public function edit($book_id)
     {
-        //
+      $book = Book::find($book_id);
+      return view("bookshow.edit_books", compact("book"));
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $book_id)
     {
-        //
+        $validatedData = $request->validate([
+          "title" => "bail|required|max:100",
+          "author" => "required|max:100",
+          "language" => "required|max:2",
+          "price" => "numeric|required|between:0,999.99",
+          "sale_price" => "numeric|nullable|between:0,999.99",
+        ]);
+
+          $data = $request->all();
+          $book = Book::find($book_id);
+          $book->update($data);
+
+          return redirect()->route("books.index");
     }
 
 
