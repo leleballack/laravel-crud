@@ -33,11 +33,7 @@
           <td>
             <a href="{{ route("books.show", $book->id) }}" class="btn btn-primary">Show</a>
             <a href="{{ route("books.edit", $book->id) }}" class="btn btn-success">Edit</a>
-            <form class="delete_books" action="{{ route("books.destroy", $book->id) }}" method="post">
-              @method("DELETE")
-              @csrf
-              <input type="submit" class="btn btn-danger" value="Delete">
-            </form>
+            @include('partials.delete_button')
           </td>
         </tr>
       @empty

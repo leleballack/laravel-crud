@@ -14,7 +14,6 @@
   </div>
 @endsection
 
-
 @section('page_title')
  Check This Book
 @endsection
