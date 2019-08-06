@@ -1,3 +1,8 @@
+## Creation, management and showcase of a book database through Laravel, with CRUD operations (Create, Store, Show, Edit, Update, Delete)
+
+![screenshot](https://user-images.githubusercontent.com/47163218/62544405-fd256100-b85f-11e9-82c5-15a071ed86e4.png)
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
